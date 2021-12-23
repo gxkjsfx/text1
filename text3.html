@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>2、8、16进制转换成10进制</h2>
+			<input type="text" v-model="outputNumber" name="" id="" value="" placeholder="在此输入待转换数字"/>
+			<input type="button"  @click="calc()" name="" id="" value="计算" /><br />
+            <input type="text" v-model="h1" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>2转10<br />
+            <input type="text" v-model="h2" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>8转10<br />
+			<input type="text" v-model="h3" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>16转10<br /><hr /><br /><br />
+			<h2>10、8、16进制转换成2进制</h2>
+			<input type="text" v-model="a" name="" id="" value="" placeholder="在此输入待转换数字"/>
+			<input type="button" @click="calc1()" name="" id="" value="计算" /><br />
+			<input type="text" v-model="hh1" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>10转2<br />
+			<input type="text" v-model="hh2" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>16转2<br />
+			<input type="text" v-model="hh3" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>8转2<br /><hr /><br /><br />
+			<h2>2、10、16进制转换成8进制</h2>
+			<input type="text" v-model="b" name="" id="" value="" placeholder="在此输入待转换数字"/>
+			<input type="button" @click="calc2()" name="" id="" value="计算" /><br />
+			<input type="text" v-model="h10" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>10转8<br />
+			<input type="text" v-model="h20" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>16转8<br />
+			<input type="text" v-model="h30" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>2转8<br /><hr /><br /><br />
+			<h2>2、8、10进制转换成16进制</h2>
+			<input type="text" v-model="c" name="" id="" value="" placeholder="在此输入待转换数字"/>
+			<input type="button" @click="calc3()" name="" id="" value="计算" /><br />
+			<input type="text" v-model="h100" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>10转16<br />
+		    <input type="text" v-model="h200" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>8转16<br />
+			<input type="text" v-model="h300" name="" id="" value="" placeholder="转换结果"/><input type="radio"  v-model="h1" name='' value=""/>2转16<br /><hr /><br /><br />
+		</div>
+		<script type="text/javascript">
+		var a1;
+			let v=new Vue({
+				el:"#app",
+				
+				data:{
+					outputNumber:"",
+					h1:"",
+					h2:"",
+					h3:"",
+					a:"",
+					hh1:"",
+					hh2:"",
+					hh3:"",
+					b:"",
+					h10:"",
+					h20:"",
+					h30:"",
+					c:"",
+					h100:"",
+					h200:"",
+					h300:""
+					
+				},
+				methods:{
+					calc(){
+						v.h1=(parseInt(v.outputNumber,2));
+					    v.h2=(parseInt(v.outputNumber,8));
+						 v.h3=(parseInt(v.outputNumber,16));
+						 
+					},
+					
+					calc1(){
+						
+						v.hh1=Number(v.a).toString(2);
+						v.hh2=parseInt(v.a,16).toString(2);
+						v.hh3=parseInt(v.a,8).toString(2);
+						
+						
+						 
+					},
+					calc2(){
+						v.h10=Number(v.b).toString(8);
+						v.h20=parseInt(v.b,16).toString(8);
+						v.h30=parseInt(v.b,2).toString(8);
+						
+						
+						 
+					},
+					calc3(){
+						v.h100=Number(v.c).toString(16);
+						v.h200=parseInt(v.c,8).toString(16);
+						v.h300=parseInt(v.c,2).toString(16);
+						
+						
+						 
+					}
+					
+					   
+						 
+					
+				}
+			})
+			
+			           
+		</script>
+	</body>
+</html>
